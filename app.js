@@ -4,8 +4,19 @@ var path = require('path');
 var dir = path.resolve(process.argv[2]);
 
 fs.readdir(dir, function(err, list) {
+
   if(err)
     console.log(err);
+
+	var imageurl = '';
+
+    mdb.configuration(function(err, res) {
+
+	imageurl = res.images.base_url + res.images.poster_sizes[1] ;
+	console.log(res.images.base_url + res.images.poster_sizes[1]);
+    });
+
+
 
   list.forEach(function(dirname) {
 
@@ -17,7 +28,7 @@ fs.readdir(dir, function(err, list) {
       {
         var movie_id = res.results[0].id;
 
-        console.log('Processing: ' + dirname);
+        //console.log('Processing: ' + dirname);
 
         mdb.movieInfo({id: movie_id}, function(err, res) {
           var imdb_id = movie_id;
@@ -31,6 +42,7 @@ fs.readdir(dir, function(err, list) {
           var genres = res.genres;
           var premiered = res.release_date;
 
+          /*
           mdb.movieCredits({id: movie_id}, function(err, res) {
             cast = res.cast.slice(0, 3);
             director = res.crew[0]; // normally director on first position; todo check object instead 
@@ -70,12 +82,11 @@ fs.readdir(dir, function(err, list) {
               }
             }); 
           });
-
-          /*
-          mdb.movieImages({id: movie_id}, function(err, res) {
-          console.log(res);
-          });
           */
+
+          mdb.movieImages({id: movie_id}, function(err, res) {
+//			  console.log(res);
+          });
 
         });
       }
