@@ -12,9 +12,9 @@ Issues
   * Object traversal to get more info. 
   * The nfo file generated is still very basic.
 
-### Require
+### Requires
     
-    node.js
+    node.js (https://github.com/joyent/node.git)
 
 ### To install/update dependencies:
 
