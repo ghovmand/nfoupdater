@@ -60,7 +60,7 @@ fs.readdir(dir, function(err, list) {
             xw.endElement();
             xw.endDocument();
 
-            var fullPath = path.join(dir, dirname, 'movie.xml');
+            var fullPath = path.join(dir, dirname, 'movie.nfo');
 
             fs.writeFile(fullPath, xw.toString(), function(err) {
               if(err) {
