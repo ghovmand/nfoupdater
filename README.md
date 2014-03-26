@@ -7,10 +7,10 @@ You will need an api-key from TMDB.
 
 Issues
   
-  Still very rudimentary. 
-  Needs some error checking. 
-  Object traversal to get more info. 
-  The nfo file generated is still very basic.
+  * Still very rudimentary. 
+  * Needs some error checking. 
+  * Object traversal to get more info. 
+  * The nfo file generated is still very basic.
 
 ### Require
     
