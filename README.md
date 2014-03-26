@@ -18,7 +18,7 @@ Issues
 
 ### To install/update dependencies:
 
-    node update
+    npm update
 
 ### To run
 
