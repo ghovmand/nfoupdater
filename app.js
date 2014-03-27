@@ -1,4 +1,4 @@
-var mdb = require('moviedb')('1ded49a87e948db6518db90621151d0d');
+var mdb = require('moviedb')('api_key');
 var fs = require('fs');
 var path = require('path');
 var dir = path.resolve(process.argv[2]);
