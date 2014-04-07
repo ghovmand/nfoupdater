@@ -6,7 +6,8 @@
     "start": "node app"
   },
   "dependencies": {
-    "xml-writer": "*",
-    "moviedb": "*"
+    "moviedb": "~0.1.2",
+    "glob": "~3.2.9",
+    "xml2js": "~0.4.2"
   }
 }
