@@ -10,6 +10,8 @@ You will need an api-key from TMDB to run this tool.
 Issues
   
   * Needs some restructring to make it more modular.
+  * Duplicate code, hardcoded values
+  * No configuration
 
 ### Requires
     
