@@ -17,6 +17,12 @@ Issues
     
     node.js (https://github.com/joyent/node.git)
 
+### External dependencies
+
+    * glob
+    * xml2js
+    * moviedb
+
 ### To install/update dependencies:
 
     npm update
