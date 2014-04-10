@@ -6,14 +6,8 @@
     "start": "node app"
   },
   "dependencies": {
-<<<<<<< HEAD
     "moviedb": "~0.1.2",
     "glob": "~3.2.9",
     "xml2js": "~0.4.2"
-=======
-    "xml-writer": "*",
-    "moviedb": "*",
-    "request": "*"
->>>>>>> 0ea53f36d0ef17e34a1d4bf9feda3276d016a5ab
   }
 }
