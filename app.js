@@ -1,4 +1,4 @@
-var mdb = require('moviedb')('api-key');
+var mdb = require('moviedb')('1ded49a87e948db6518db90621151d0d');
 var fs = require('fs');
 var path = require('path');
 var glob = require('glob');
@@ -49,7 +49,7 @@ function getTmdbId(imdbid, nfopath, callback) {
   mdb.find({id: imdbid, external_source: 'imdb_id'}, function(err, res) {
     if(!res) { console.log('ERR '.red + 'No tmdbid id for: ' + nfopath); return; }
     var tmdbid = res.movie_results[0].id;
-    getImageMetaData(tmdbid, function(imageData) {
+    getImageMetaData(tmdbid, nfopath, function(imageData) {
       processPosters(nfopath, tmdbid, imageData, callback);
     });
   });  
@@ -131,12 +131,12 @@ function writeFanartNfo(nfopath, filename, callback) {
   });
 }
 
-function getImageMetaData(tmdbid, callback) {
+function getImageMetaData(tmdbid, nfopath, callback) {
   mdb.movieImages({ id: tmdbid }, function(err, res) {
     if(err) callback(err);
-    if(!res) { console.log('WARN '.yellow + 'No images found for: ' + tmdbid); return; }
-    if(res.backdrops.length === 0) { console.log('WARN '.yellow + 'No backdrops found for: ' + tmdbid); }
-    if(res.posters.length === 0) { console.log('WARN '.yellow + 'No posters found for: ' + tmdbid); return; }
+    if(!res) { console.log('WARN '.yellow + 'No images found for: ' + nfopath); return; }
+    if(res.backdrops.length === 0) { console.log('WARN '.yellow + 'No backdrops found for: ' + nfopath); }
+    if(res.posters.length === 0) { console.log('WARN '.yellow + 'No posters found for: ' + nfopath); return; }
     callback(res);
   });
 }
